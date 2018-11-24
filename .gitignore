@@ -1,0 +1,5 @@
+config.yaml
+!profiles/default/config.yaml
+
+coolq/
+tgdata.db

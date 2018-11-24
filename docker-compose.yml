@@ -1,0 +1,33 @@
+version: '3'
+services:
+  efb:
+    build: ./
+    container_name: efb
+    volumes:
+      - ./profiles:/root/.ehforwarderbot/profiles
+    networks:
+      - backend
+    depends_on:
+      - coolq
+    restart: unless-stopped
+
+  coolq:
+    image: richardchien/cqhttp:latest
+    container_name: coolq-client
+
+    volumes:
+      - ./coolq:/home/user/coolq
+    networks:
+      - backend
+    expose:
+      - 8000
+      - 5700
+
+    ports:
+      - 5911:5911
+
+    env_file:
+      - production.env
+
+networks:
+  backend:
