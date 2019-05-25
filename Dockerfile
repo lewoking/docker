@@ -24,9 +24,8 @@ RUN set -ex \
 RUN set -ex \
         && pip3 install --upgrade pip \
         && pip3 install ehforwarderbot \
+        && pip3 install imageio-ffmpeg \
         && pip3 install efb-telegram-master \
-        && pip3 install efb-wechat-slave \
-        && pip3 install efb-qq-slave \
-        && pip3 install efb-fb-messenger-slave
+        && pip3 install efb-qq-slave
         
 CMD ["ehforwarderbot"]
