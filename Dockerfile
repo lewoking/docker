@@ -19,7 +19,7 @@ RUN set -ex \
 	        openssl-dev \
 		    musl-dev \
 		    libffi-dev \
-        && apk add --nocache --virtual .build-deps \
+        && apk add --no-cache --virtual .build-deps \
             gcc \
         && pip3 install --upgrade pip \
         && pip3 install ehforwarderbot \
