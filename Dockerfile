@@ -25,6 +25,8 @@ RUN set -ex \
         && pip3 install ehforwarderbot \
         && pip3 install imageio-ffmpeg \
         && pip3 install efb-telegram-master \
+        # h11 version conflict workaround \
+        && pip3 install h11==0.8.1 \
         && pip3 install efb-qq-slave \
         && apk del --purge .build-deps
         
