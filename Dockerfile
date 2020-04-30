@@ -23,11 +23,11 @@ RUN set -ex \
         && pip wheel ehforwarderbot \
         && pip wheel imageio-ffmpeg \
         && pip wheel efb-telegram-master \
-        && pip wheel efb-qq-slave \
+        && pip wheel efb-wechat-slave \
         && apk del --purge .build-deps
 
 FROM python:3.7-alpine
-MAINTAINER PolyQY <gzmanyang@gmail.com>
+MAINTAINER PolyQY <lewoking@gmail.com>
 
 ENV LANG C.UTF-8
 
@@ -40,7 +40,7 @@ RUN pip install -U pip \
     && pip install ehforwarderbot -f /wheels \
     && pip install imageio-ffmpeg -f /wheels \
     && pip install efb-telegram-master -f /wheels \
-    && pip install efb-qq-slave -f /wheels \
+    && pip install efb-wechat-slave -f /wheels \
     && rm -rf /wheels \
     && rm -rf /root/.cache/pip/*
         
