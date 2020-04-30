@@ -21,7 +21,7 @@ efb
 ```
 - `efb/docker-compose.yml` 参考内容如下：
 ```yaml
-ews_v2:
+efb:
     image: guozi2/efb
     container_name: efb
     restart: always
